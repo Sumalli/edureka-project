@@ -6,7 +6,6 @@ pipeline {
         BRANCH_NAME = 'master'
     }
  
-    stages {
         stage('Checkout') {
             steps {
                 checkout([$class: 'GitSCM',
