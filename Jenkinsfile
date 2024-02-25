@@ -4,19 +4,19 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'compiling...'
-                sh 'mvn compile' // Example Maven command
+                sh '/opt/apache-maven-3.8.8/bin/mvn compile' // Example Maven command
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'mvn test' // Example Maven command
+                sh '/opt/apache-maven-3.8.8/bin/mvn' // Example Maven command
             }
         }
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn package' // Example Maven command
+                sh '/opt/apache-maven-3.8.8/bin/mvn' // Example Maven command
             }
         }
     }
