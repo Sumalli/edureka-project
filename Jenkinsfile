@@ -10,13 +10,13 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh '/opt/apache-maven-3.8.8/bin/mvn' // Example Maven command
+                sh '/opt/apache-maven-3.8.8/bin/mvn test' // Example Maven command
             }
         }
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh '/opt/apache-maven-3.8.8/bin/mvn' // Example Maven command
+                sh '/opt/apache-maven-3.8.8/bin/mvn package' // Example Maven command
             }
         }
     }
