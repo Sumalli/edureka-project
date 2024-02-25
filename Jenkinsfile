@@ -2,17 +2,7 @@ pipeline {
     agent {
         label 'jenkinsagent'
     }
-    environment {
-        BRANCH_NAME = 'master'
-    }
     stages {
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM',
-                    branches: [[name: "${BRANCH_NAME}"]],
-                    userRemoteConfigs: [[url: 'https://github.com/sysadmk1/edureka-project.git']]])
-            }
-        }
         stage('Compile') {
             steps {
                 echo 'compiling...'
