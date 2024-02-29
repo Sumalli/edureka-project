@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'jenkinsagent'
+        label 'dockerslave'
     }
     stages {
         stage('Compile') {
