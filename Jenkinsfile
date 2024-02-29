@@ -21,5 +21,12 @@ pipeline {
                 sh '/opt/apache-maven-3.8.8/bin/mvn package' // Example Maven command
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh "docker build --no-cache -t kiranfinalproject1:latest ."
+                }
+            }
+        }
     }
 }
