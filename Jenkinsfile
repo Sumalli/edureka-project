@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'jenkinsagent'
+        label 'dockerslave'
     }
     stages {
         stage('Compile') {
@@ -19,6 +19,13 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh '/opt/apache-maven-3.8.8/bin/mvn package' // Example Maven command
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh "docker build --no-cache -t kiranfinalproject1:latest ."
+                }
             }
         }
     }
