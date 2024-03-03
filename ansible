@@ -24,7 +24,7 @@ pipeline {
         stage('Build Docker Image with Ansible') {
             steps {
                 script {
-                    sh 'ansible-playbook -i inventory playbook.yml'
+                    sh '/root/ansible-playbook -i inventory dockerplay.yml'
                 }
             }
         }
