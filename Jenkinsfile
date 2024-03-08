@@ -24,7 +24,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build --no-cache -t kiranfinalproject1:latest ."
+                     sh 'ansible-playbook dockerplay.yml'
                 }
             }
         }
